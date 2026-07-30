@@ -1,16 +1,20 @@
 click>=8.0
+emoji>=2.0
 gensim>=4.3
 ipykernel>=6.0
+langchain==1.2.6
+langchain-google-genai
+langchain_tavily
 matplotlib>=3.8
 notebook>=7.0
 numpy>=1.26
 pandas>=2.1
-scikit-learn>=1.4
-spacy>=3.7,<4.0
-emoji>=2.0
+pydantic
 pyLDAvis>=3.4
+scikit-learn>=1.4
 seaborn>=0.13
+setuptools<81
+spacy>=3.7,<4.0
 tensorflow>=2.16
 tensorflow-hub>=0.16
-setuptools<81  # tensorflow-hub depende de pkg_resources, eliminado en setuptools>=81
-transformers>=4.40,<5.0  # transformers 5 elimino por completo el soporte de TensorFlow (TFAutoModel ya no existe)
+transformers>=4.40,<5.0
