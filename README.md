@@ -1,4 +1,4 @@
-# MUIA_PNLA — Procesamiento del Lenguaje Natural
+# MUIA_PLNA — Procesamiento del Lenguaje Natural
 
 Repositorio de materiales didácticos de la asignatura **Procesamiento del Lenguaje Natural** del Máster Universitario en Inteligencia Artificial (MUIA) de U-tad.
 
