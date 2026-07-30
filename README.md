@@ -6,6 +6,8 @@ Repositorio de materiales didácticos de la asignatura **Procesamiento del Lengu
 
 ## Contenido
 
+### Notebooks
+
 | Notebook | Descripción |
 |---|---|
 | `01_instalacion_y_prueba_spacy.ipynb` | Verificación del entorno y primera prueba de spaCy |
@@ -28,6 +30,16 @@ Repositorio de materiales didácticos de la asignatura **Procesamiento del Lengu
 | `18_Transformer_Embeddings_clasificacion_textos.ipynb`<br>🧪 [Abrir en Colab](https://colab.research.google.com/drive/18KO-Fn3fJIfwhP62Ef3-J00lrbLsY--C) | Mismo problema que los notebooks 15, 16 y 17, sustituyendo la LSTM por bloques Transformer construidos desde cero (codificación posicional, autoatención multicabeza y red *feed-forward*) sobre la misma matriz de embeddings por palabra de `nnlm-es-dim128` |
 | `20_BERT_BETO_clasificacion_textos.ipynb`<br>🧪 [Abrir en Colab](https://colab.research.google.com/drive/1qS9JBbYP6rbdH7KRJTqpG_UxDuGOP-oB) | Mismo problema que los notebooks 15-18, usando el modelo preentrenado BERT en español BETO (`bert-base-spanish-wwm-cased`) como extractor de características congelado y una cabeza clasificadora entrenada sobre el vector de resumen (`[CLS]`) de 768 dimensiones |
 | `21_BERT_BETO_NER_tecnicismos_futbol.ipynb`<br>🧪 [Abrir en Colab](https://colab.research.google.com/drive/1zqDCBqrbbA1ayyWf--74P_HLhv1PqhC7) | Reconocimiento de Entidades Nombradas (NER) con BETO: clasificación palabra a palabra (esquema BIO) para detectar tecnicismos futbolísticos, con una prueba final de generalización a tecnicismos no vistos durante el entrenamiento |
+
+### Scripts
+| Script | Descripción |
+|---|---|
+| `23_request_API_LLM.py` | Primera petición a un LLM (Gemini, vía `langchain-google-genai`): instanciación del modelo y llamada simple con `invoke` |
+| `24_chatLLM.py` | Chat con historial gestionado a mano: bucle de conversación por consola que mantiene el contexto turno a turno con `SystemMessage`, `HumanMessage` y `AIMessage` |
+| `25_chatLLM_Tool.py` | Chat con *tool calling*: el modelo decide cuándo llamar a una herramienta de búsqueda real en internet (Tavily) para responder preguntas sobre información actual, en lugar de inventar la respuesta |
+| `026_PromptTemplate_ejemplo.py` | Plantilla de prompt (`PromptTemplate`) con los placeholders `{tema}` y `{pregunta}`, conectada al modelo mediante LCEL (`prompt \| llm`) |
+| `027_ChatPromptTemplate_ejemplo.py` | Plantilla de chat (`ChatPromptTemplate`) con mensaje de sistema, ejemplos *few-shot* en español rioplatense y una pregunta final, conectada al modelo mediante LCEL |
+
 
 ---
 
