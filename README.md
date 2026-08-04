@@ -37,8 +37,11 @@ Repositorio de materiales didácticos de la asignatura **Procesamiento del Lengu
 | `23_request_API_LLM.py` | Primera petición a un LLM (Gemini, vía `langchain-google-genai`): instanciación del modelo y llamada simple con `invoke` |
 | `24_chatLLM.py` | Chat con historial gestionado a mano: bucle de conversación por consola que mantiene el contexto turno a turno con `SystemMessage`, `HumanMessage` y `AIMessage` |
 | `25_chatLLM_Tool.py` | Chat con *tool calling*: el modelo decide cuándo llamar a una herramienta de búsqueda real en internet (Tavily) para responder preguntas sobre información actual, en lugar de inventar la respuesta |
-| `026_PromptTemplate_ejemplo.py` | Plantilla de prompt (`PromptTemplate`) con los placeholders `{tema}` y `{pregunta}`, conectada al modelo mediante LCEL (`prompt \| llm`) |
-| `027_ChatPromptTemplate_ejemplo.py` | Plantilla de chat (`ChatPromptTemplate`) con mensaje de sistema, ejemplos *few-shot* en español rioplatense y una pregunta final, conectada al modelo mediante LCEL |
+| `26_PromptTemplate_ejemplo.py` | Plantilla de prompt (`PromptTemplate`) con los placeholders `{tema}` y `{pregunta}`, conectada al modelo mediante LCEL (`prompt \| llm`) |
+| `27_ChatPromptTemplate_ejemplo.py` | Plantilla de chat (`ChatPromptTemplate`) con mensaje de sistema, ejemplos *few-shot* en español rioplatense y una pregunta final, conectada al modelo mediante LCEL |
+| `28_LCEL_runnable_ejemplo.py` | `RunnableLambda` propio (pasa un texto a minúsculas y sustituye los espacios por guiones bajos), probado de forma aislada y encadenado al final de un chain (`prompt \| llm \| StrOutputParser() \| runnable`) |
+| `29_LCEL_composicion_chains_ejemplo.py` | Composición de dos chains independientes (una genera una explicación, otra la resume) encadenadas con una función lambda que adapta la salida de texto de la primera a la variable de entrada que espera la segunda |
+| `30_Pydantic_ejemplo.py` | Extracción de datos estructurados con `with_structured_output` y modelos Pydantic (`Portatil`, `Catalogo`): a partir del HTML en bruto de una página de catálogo de portátiles, el modelo genera y valida un listado con marca, modelo, procesador, RAM, disco y precio, que se imprime y se guarda en `portátiles.json` |
 
 
 ---
