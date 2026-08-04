@@ -25,5 +25,5 @@ chain = prompt | llm
 # 4. Ejecutamos el pipeline proporcionando valores para los placeholders
 respuesta = chain.invoke({"tema": "Machine Learning", 
                           "pregunta": "¿Qué es el overfitting?"})
-
+ 
 print(respuesta.text)
