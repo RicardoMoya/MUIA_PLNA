@@ -4,8 +4,11 @@ emoji>=2.0
 gensim>=4.3
 ipykernel>=6.0
 langchain==1.2.6
+langchain-community
 langchain-google-genai
+langchain-text-splitters
 langchain_tavily
+pypdf
 matplotlib>=3.8
 notebook>=7.0
 numpy>=1.26
