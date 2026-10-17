@@ -1,12 +1,6 @@
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_huggingface import HuggingFaceEmbeddings
-import sys
-import io
-
-# Configurar la salida para UTF-8
-if sys.platform == 'win32':
-    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
 
 # 1. Cargamos el mismo PDF utilizado en el script 31.
