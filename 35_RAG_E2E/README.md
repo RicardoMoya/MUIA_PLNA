@@ -7,7 +7,7 @@ La aplicación permite conversar por consola con un LLM de Gemini. Para cada pre
 El siguiente esquema muestra el funcionamiento de la aplicación que vamos a desarrollar y el papel de sus principales ficheros. Se distinguen dos fases: la indexación, en la que los documentos PDF se fragmentan y se almacenan junto con sus embeddings en ChromaDB, y la conversación, en la que se recupera información para responder a las preguntas del usuario. Las dos representaciones de ChromaDB corresponden a la misma base de datos local.
 
 <p align="center">
-  <img src="esquema_rag_e2e.png" alt="Esquema de la aplicación RAG E2E: indexación documental y conversación con el asistente" height="700">
+  <img src="../imgs/022_esquema_rag_e2e.png" alt="Esquema de la aplicación RAG E2E: indexación documental y conversación con el asistente" height="700">
 </p>
 
 
