@@ -42,7 +42,17 @@ Repositorio de materiales didácticos de la asignatura **Procesamiento del Lengu
 | `28_LCEL_runnable_ejemplo.py` | `RunnableLambda` propio (pasa un texto a minúsculas y sustituye los espacios por guiones bajos), probado de forma aislada y encadenado al final de un chain (`prompt \| llm \| StrOutputParser() \| runnable`) |
 | `29_LCEL_composicion_chains_ejemplo.py` | Composición de dos chains independientes (una genera una explicación, otra la resume) encadenadas con una función lambda que adapta la salida de texto de la primera a la variable de entrada que espera la segunda |
 | `30_Pydantic_ejemplo.py` | Extracción de datos estructurados con `with_structured_output` y modelos Pydantic (`Portatil`, `Catalogo`): a partir del HTML en bruto de una página de catálogo de portátiles, el modelo genera y valida un listado con marca, modelo, procesador, RAM, disco y precio, que se imprime y se guarda en `portátiles.json` |
+| `31_pdf_loader_chunking.py` | Carga un PDF con `PyPDFLoader` y lo divide en fragmentos con `RecursiveCharacterTextSplitter`, comparando dos estrategias: separadores por defecto y separadores basados en encabezados con letra y punto |
+| `32_html_loader_chunking.py` | Carga una página HTML (local o vía HTTP) y la divide por artículos con `HTMLHeaderTextSplitter`, agrupando encabezado y contenido en un único `Document` por artículo |
+| `33_pdf_embeddings_local.py` | Extiende el script 31 calculando el embedding de cada fragmento con el modelo multilingüe `BAAI/bge-m3` de Hugging Face ejecutado en local |
+| `34_pdf_embeddings_gemini.py` | Igual que el script 33 pero usando el modelo `gemini-embedding-001` de Google a través de la API de Gemini (`GoogleGenerativeAIEmbeddings`) |
 
+
+### Proyecto RAG E2E
+
+| Carpeta | Descripción |
+|---|---|
+| [`35_RAG_E2E/`](35_RAG_E2E/) | Sistema RAG de extremo a extremo: indexa documentos PDF de INCIBE en una base de datos vectorial ChromaDB local y permite conversar por consola con un LLM de Gemini que recupera fragmentos del corpus para responder. Incluye indexador, módulo RAG, gestión de prompts, configuración y aplicación de chat. Dispone de su propio entorno virtual y [README](35_RAG_E2E/README.md) con instrucciones de instalación y uso. |
 
 ---
 
