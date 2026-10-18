@@ -40,6 +40,7 @@ ENV/
 env.bak/
 venv.bak/
 .venv/
+.venv*/
 .env
 
 # PyCharm
@@ -140,6 +141,7 @@ secrets.py
 *.db
 *.sqlite
 *.sqlite3
+chroma_db/
 
 # Coverage reports
 htmlcov/
