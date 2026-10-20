@@ -19,6 +19,5 @@ CHUNK_SIZE = 5000
 CHUNK_OVERLAP = 1000
 SEARCH_K = 2
 
-# 4. True: usa la conversación; False: trata cada pregunta de forma aislada.
-HISTORY = True
+# 4. Longitud de los extractos mostrados en el chat.
 PREVIEW_CHARS = 250

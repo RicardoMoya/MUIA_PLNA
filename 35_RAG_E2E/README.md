@@ -146,7 +146,7 @@ La **aplicación de chat** es la interfaz de consola que recibe las preguntas y 
 python ./app.py
 ```
 
-Cuando aparezca `Tú:`, escribe una pregunta y pulsa Intro. La aplicación recuperará los fragmentos pertinentes y los enviará al LLM junto con las instrucciones del prompt y, si está activado, el historial.
+Cuando aparezca `Tú:`, escribe una pregunta y pulsa Intro. La aplicación recuperará los fragmentos pertinentes y los enviará al LLM junto con las instrucciones del prompt y el historial de la conversación.
 
 Después de cada respuesta se mostrará el bloque **DOCUMENTOS TENIDOS EN CUENTA**, separado mediante líneas horizontales. Incluye los metadatos y los primeros caracteres de los mismos fragmentos enviados al modelo. La longitud del extracto se controla mediante `PREVIEW_CHARS`, cuyo valor actual es 250.
 
@@ -169,10 +169,7 @@ Estas preguntas permiten explorar diferentes temas de los documentos del corpus 
 
 Para comprobar el uso del historial, puedes continuar una pregunta sobre phishing con «¿Y cómo puedo evitarlo?» o «¿Puedes resumirlo en tres recomendaciones?».
 
-La opción `HISTORY` de `config.py` controla este comportamiento:
-
-- **`True`**: utiliza las preguntas y respuestas anteriores tanto para entender la consulta de búsqueda como para generar la respuesta.
-- **`False`**: procesa únicamente la pregunta actual, sin utilizar los mensajes anteriores.
+La aplicación utiliza siempre el historial de la sesión para interpretar las preguntas de seguimiento y generar las respuestas. Al iniciar el chat, el historial está vacío; los mensajes se conservan en memoria hasta cerrar la aplicación.
 
 También puedes formular una pregunta ajena al corpus, como «¿Cuál será el tiempo en Madrid mañana?», para comprobar si el asistente reconoce que no dispone de información suficiente. La recuperación puede devolver fragmentos aunque no respondan a la pregunta: conviene revisar su pertinencia y contrastar la respuesta con las fuentes.
 
@@ -186,7 +183,7 @@ El proyecto separa la indexación documental, la lógica del RAG y la interacci�
 |---|---|
 | `indexador.py` | Carga los PDF, los fragmenta, calcula sus embeddings y reconstruye la base de datos local. Al finalizar, muestra información de los fragmentos y vectores almacenados. |
 | `app.py` | Punto de entrada del chat por consola. Recibe las preguntas, gestiona el historial y muestra las respuestas junto con los fragmentos enviados al LLM. |
-| `config.py` | Configuración de rutas, colección de ChromaDB, modelos, temperatura, fragmentación, número de resultados, uso del historial y longitud de los extractos mostrados. |
+| `config.py` | Configuración de rutas, colección de ChromaDB, modelos, temperatura, fragmentación, número de resultados y longitud de los extractos mostrados. |
 | `prompts.py` | Plantillas de instrucciones para generar respuestas basadas en el contexto documental y reformular preguntas de seguimiento utilizando el historial. |
 | `rag.py` | Inicializa la conexión con ChromaDB y los modelos. Recupera el contexto, genera la respuesta y devuelve los mismos fragmentos enviados al LLM para mostrarlos en el chat. |
 | `requirements.txt` | Dependencias de Python necesarias para ejecutar el proyecto, ordenadas alfabéticamente. |

@@ -1,6 +1,6 @@
 from langchain_core.messages import HumanMessage, AIMessage
 
-from config import HISTORY, PREVIEW_CHARS
+from config import PREVIEW_CHARS
 from rag import inicializar_rag, responder
 
 
@@ -9,7 +9,6 @@ def main():
     retriever, cadena_consulta, cadena_respuesta = inicializar_rag()
     historial = []
     print("Asistente docente de ciberseguridad")
-    print(f"Historial activado: {HISTORY}")
     print("Escribe 'salir' para terminar.\n")
 
     while True:
@@ -19,12 +18,11 @@ def main():
         if not pregunta:
             continue
 
-        # 2. HISTORY controla tanto la reformulación como la generación.
+        # 2. Utilizamos siempre el historial para la reformulación y la generación.
         try:
             respuesta, documentos = responder(
-                pregunta, historial if HISTORY else [],
-                retriever, cadena_consulta, cadena_respuesta,
-            )
+                pregunta, historial,
+                retriever, cadena_consulta, cadena_respuesta)
         except Exception as error:
             print(f"No se ha podido responder: {error}\n")
             continue
