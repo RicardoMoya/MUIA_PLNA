@@ -53,6 +53,7 @@ Repositorio de materiales didácticos de la asignatura **Procesamiento del Lengu
 | Carpeta | Descripción |
 |---|---|
 | [`35_RAG_E2E/`](35_RAG_E2E/) | Sistema RAG de extremo a extremo: indexa documentos PDF de INCIBE en una base de datos vectorial ChromaDB local y permite conversar por consola con un LLM de Gemini que recupera fragmentos del corpus para responder. Incluye indexador, módulo RAG, gestión de prompts, configuración y aplicación de chat. Dispone de su propio entorno virtual y [README](35_RAG_E2E/README.md) con instrucciones de instalación y uso. |
+| [asistente-ciberseguridad-incibe-rag](https://github.com/RicardoMoya/asistente-ciberseguridad-incibe-rag) | Asistente de ciberseguridad basado en documentos públicos de INCIBE que adapta el RAG E2E a una interfaz web con Streamlit. Permite configurar los modelos de Gemini, introducir una API key propia y consultar los fragmentos utilizados en cada respuesta. Forma parte de los contenidos de la asignatura y se mantiene en un repositorio independiente para facilitar su despliegue en Streamlit Community Cloud. |
 
 ---
 
